@@ -1,0 +1,58 @@
+- name: Ink Readers Lab
+  url: /lab
+  img: /images/product1.jpg
+  titleColor: text-blue-700
+  subtitle: "Where curiosity experiments."
+  subtitleColor: text-blue-500
+  description: Hands-on science for kids (ages 5–8) with safe, home-based activities. Expand later into maker challenges and STEM clubs with downloadable kits.
+
+- name: Ink Readers Quest
+  url: /quest
+  img: /images/product1.jpg
+  titleColor: text-green-700
+  subtitle: "Learn, play, discover."
+  subtitleColor: text-green-500
+  description: Fun science challenges like "Find 5 things in your kitchen that float." Later, enjoy math adventures and history quests to solve mysteries.
+
+- name: Ink Readers Academy
+  url: /academy
+  img: /images/product1.jpg
+  titleColor: text-purple-700
+  subtitle: "Big learning for small explorers."
+  subtitleColor: text-purple-500
+  description: Structured weekly posts explaining science concepts through stories. Expanding into "Subject of the Month" themes, workbooks, and online courses.
+
+- name: Ink Readers Explorer’s Club
+  url: /explorer-club
+  img: /images/product1.jpg
+  titleColor: text-orange-700
+  subtitle: "Discover the world, one adventure at a time."
+  subtitleColor: text-orange-500
+  description: Mini science adventures linked to real-world topics. Later, nature walks, printable scavenger hunts, global culture, and simple geography.
+
+- name: Ink Readers Spark
+  url: /spark
+  img: /images/product1.jpg
+  titleColor: text-red-700
+  subtitle: "Sparking ideas, one page at a time."
+  subtitleColor: text-red-500
+  description: Short, illustrated "science sparks"—2–3 minute reads with a quick "try this at home" section. Expanding into bite-sized math tricks and creative writing prompts.
+
+- name: Ink Readers Playground
+  url: /playground
+  img: /images/product1.jpg
+  titleColor: text-indigo-700
+  subtitle: "The fun side of learning."
+  subtitleColor: text-indigo-500
+  description: Website sections like "Experiment Zone," "Puzzle Zone," and "Story Zone." Expanding into interactive games, quizzes, and seasonal challenges.
+
+
+- name: "Awesome Product 1"
+  url: "/products/product-1/"
+  img: "/images/product1.jpg"
+  subtitle: "Best Seller"
+  description: "Short description here."
+  titleColor: "text-blue-600"
+  subtitleColor: "text-gray-500"
+
+

@@ -1,0 +1,27 @@
+baseURL = 'https://inkreaders.com/'
+languageCode = 'en-us'
+title = 'InkReaders'
+# theme = 'ananke' # Commented out, as we are building from scratch
+
+# Main menu for consistent cross-application navigation
+[[menu.main]]
+  name = "Home"
+  url = "https://inkreaders.com/"
+  weight = 10
+
+[[menu.main]]
+  name = "Blogs"
+  url = "https://inkreaders.com/posts/"
+  weight = 20
+
+[[menu.main]]
+  name = "Docs"
+  url = "https://inkreaders.com/docs/"
+  weight = 40
+  identifier = "docs-link"
+
+[[menu.main]]
+  name = "Our App"
+  url = "https://app.inkreaders.com/"
+  weight = 30
+  identifier = "app-link"

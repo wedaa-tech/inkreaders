@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} - InkReaders</title>
+    <!-- Tailwind CSS -->
+    {{ $mainCss := resources.Get "css/main.css" | postCSS (dict "config" "./postcss.config.js") }}
+    <link rel="stylesheet" href="{{ $mainCss.Permalink }}">
+</head>
+
+<body class="font-sans antialiased text-gray-900 bg-gray-100 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    {{ partial "header_nav.html" . }}
+
+    <!-- Main -->
+    <main class="flex-1 w-full max-w-6xl bg-white rounded-lg shadow-xl p-8 my-8 mx-auto">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto py-4 text-center text-gray-600">
+        {{ partial "footer.html" . }}
+    </footer>
+
+</body>
+</html>

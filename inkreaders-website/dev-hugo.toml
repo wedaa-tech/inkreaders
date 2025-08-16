@@ -1,0 +1,30 @@
+    baseURL = 'http://localhost:1313/' # Keep this for local development
+    languageCode = 'en-us'
+    title = 'InkReaders'
+    theme = 'ananke'
+
+    # Add these menu entries for your navigation tabs
+    [[menu.main]]
+      name = "Home"
+      url = "/"
+      weight = 10 # Controls order, lower number means earlier in the menu
+
+    [[menu.main]]
+      name = "Blogs"
+      url = "/posts/" # Ananke theme often uses /posts/ for blogs, adjust if your theme differs
+      weight = 20
+
+    [[menu.main]]
+      name = "Docs"
+      url = "http://localhost:1313/docs/" # Local URL for Docusaurus (via Hugo's proxy if running)
+      weight = 40
+      identifier = "docs-link" # Optional: unique identifier for this menu item
+      
+    [[menu.main]]
+      name = "Our App"
+      url = "http://localhost:3000/" # Local URL for your React Host app
+      weight = 30
+      identifier = "app-link" # Optional: unique identifier for this menu item
+
+
+    

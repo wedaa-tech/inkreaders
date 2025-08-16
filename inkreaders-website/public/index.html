@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="generator" content="Hugo 0.148.1"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InkReaders - InkReaders</title>
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/main.css">
+</head>
+
+<body class="font-sans antialiased text-gray-900 bg-gray-100 min-h-screen flex flex-col">
+
+    
+    <header class="sticky top-0 w-full bg-blue-700 text-white shadow-lg z-50">
+    <nav class="container mx-auto flex items-center justify-between px-4 py-3">
+        
+        
+        <a href="/" class="text-2xl font-bold tracking-tight hover:text-blue-200 transition duration-200">
+            InkReaders
+        </a>
+
+        
+        <div class="hidden md:flex space-x-6 text-lg font-semibold">
+            <a href="/" 
+               class="border-b-2 border-white text-white transition duration-200 pb-1">
+               Home
+            </a>
+            <a href="/posts/" 
+               class="hover:text-blue-200 transition duration-200 pb-1">
+               Blogs
+            </a>
+            <a href="/docs/" 
+            class="hover:text-blue-200 transition duration-200 pb-1">
+            Docs
+            </a>
+            <a href="https://app.inkreaders.com/" 
+               class="hover:text-blue-200 transition duration-200 pb-1" target="_blank" rel="noopener">
+               Our App
+            </a>
+        </div>
+
+        
+        <button id="menu-btn" class="md:hidden focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                      d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </button>
+    </nav>
+
+    
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-700">
+        <a href="/" 
+           class="block px-4 py-2 bg-blue-900 text-white">
+           Home
+        </a>
+        <a href="/posts/" 
+           class="block px-4 py-2 hover:bg-blue-600">
+           Blogs
+        </a>
+        <a href="/docs/" 
+            class="block px-4 py-2 hover:bg-blue-600">
+            Docs
+        </a>
+        <a href="https://app.inkreaders.com/" 
+           class="block px-4 py-2 hover:bg-blue-600" target="_blank" rel="noopener">
+           Our App
+        </a>
+    </div>
+
+    
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</header>
+
+
+    
+    <main class="flex-1 w-full max-w-6xl bg-white rounded-lg shadow-xl p-8 my-8 mx-auto">
+        
+
+
+<section class="relative w-full overflow-hidden">
+  <div id="banner-container" class="flex transition-transform duration-700 ease-in-out">
+
+    
+    <div class="min-w-full h-[500px] bg-cover bg-center flex flex-col items-center justify-center text-center p-8"
+         style="background-image: url('/images/banner1.jpg');">
+      <div class="bg-black bg-opacity-50 p-6 rounded-lg">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-white">Welcome to <span class="text-yellow-300">InkReaders</span></h1>
+        <p class="text-lg md:text-xl mb-6 max-w-2xl text-gray-200">Discover trending products and insightful blogs at one place.</p>
+        <a href="/posts/" class="px-6 py-3 bg-yellow-400 text-black rounded-lg font-semibold hover:bg-yellow-300 transition">
+          Explore Blogs
+        </a>
+      </div>
+    </div>
+
+    
+    <div class="min-w-full h-[500px] bg-cover bg-center flex flex-col items-center justify-center text-center p-8"
+         style="background-image: url('/images/banner2.jpg');">
+      <div class="bg-black bg-opacity-50 p-6 rounded-lg">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-white">Our App is Live 🚀</h1>
+        <p class="text-lg md:text-xl mb-6 max-w-2xl text-gray-200">Manage your reading, notes, and knowledge seamlessly.</p>
+        <a href="https://app.inkreaders.com/" class="px-6 py-3 bg-white text-green-700 rounded-lg font-semibold hover:bg-gray-200 transition">
+          Try Our App
+        </a>
+      </div>
+    </div>
+
+    
+    <div class="min-w-full h-[500px] bg-cover bg-center flex flex-col items-center justify-center text-center p-8"
+         style="background-image: url('/images/banner3.jpg');">
+      <div class="bg-black bg-opacity-50 p-6 rounded-lg">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-white">Learn with Docs 📚</h1>
+        <p class="text-lg md:text-xl mb-6 max-w-2xl text-gray-200">Step-by-step guides to help you explore InkReaders fully.</p>
+        <a href="/docs/" class="px-6 py-3 bg-white text-purple-700 rounded-lg font-semibold hover:bg-gray-200 transition">
+          View Docs
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  
+  <button id="prevBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white px-3 py-2 rounded-full hover:bg-opacity-70">‹</button>
+  <button id="nextBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white px-3 py-2 rounded-full hover:bg-opacity-70">›</button>
+
+  
+  <div id="dots" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3"></div>
+</section>
+
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+  
+    <a href="/lab" class="product-card">
+      <img src="/images/product1.jpg" alt="Ink Readers Lab">
+      <h3 class="product-title text-blue-700">Ink Readers Lab</h3>
+      <p class="product-subtitle text-blue-500">“Where curiosity experiments.”</p>
+      <p class="product-description">Hands-on science for kids (ages 5–8) with safe, home-based activities. Expand later into maker challenges and STEM clubs with downloadable kits.</p>
+    </a>
+  
+    <a href="/quest" class="product-card">
+      <img src="/images/product1.jpg" alt="Ink Readers Quest">
+      <h3 class="product-title text-green-700">Ink Readers Quest</h3>
+      <p class="product-subtitle text-green-500">“Learn, play, discover.”</p>
+      <p class="product-description">Fun science challenges like &#34;Find 5 things in your kitchen that float.&#34; Later, enjoy math adventures and history quests to solve mysteries.</p>
+    </a>
+  
+    <a href="/academy" class="product-card">
+      <img src="/images/product1.jpg" alt="Ink Readers Academy">
+      <h3 class="product-title text-purple-700">Ink Readers Academy</h3>
+      <p class="product-subtitle text-purple-500">“Big learning for small explorers.”</p>
+      <p class="product-description">Structured weekly posts explaining science concepts through stories. Expanding into &#34;Subject of the Month&#34; themes, workbooks, and online courses.</p>
+    </a>
+  
+    <a href="/explorer-club" class="product-card">
+      <img src="/images/product1.jpg" alt="Ink Readers Explorer’s Club">
+      <h3 class="product-title text-orange-700">Ink Readers Explorer’s Club</h3>
+      <p class="product-subtitle text-orange-500">“Discover the world, one adventure at a time.”</p>
+      <p class="product-description">Mini science adventures linked to real-world topics. Later, nature walks, printable scavenger hunts, global culture, and simple geography.</p>
+    </a>
+  
+    <a href="/spark" class="product-card">
+      <img src="/images/product1.jpg" alt="Ink Readers Spark">
+      <h3 class="product-title text-red-700">Ink Readers Spark</h3>
+      <p class="product-subtitle text-red-500">“Sparking ideas, one page at a time.”</p>
+      <p class="product-description">Short, illustrated &#34;science sparks&#34;—2–3 minute reads with a quick &#34;try this at home&#34; section. Expanding into bite-sized math tricks and creative writing prompts.</p>
+    </a>
+  
+    <a href="/playground" class="product-card">
+      <img src="/images/product1.jpg" alt="Ink Readers Playground">
+      <h3 class="product-title text-indigo-700">Ink Readers Playground</h3>
+      <p class="product-subtitle text-indigo-500">“The fun side of learning.”</p>
+      <p class="product-description">Website sections like &#34;Experiment Zone,&#34; &#34;Puzzle Zone,&#34; and &#34;Story Zone.&#34; Expanding into interactive games, quizzes, and seasonal challenges.</p>
+    </a>
+  
+    <a href="/products/product-1/" class="product-card">
+      <img src="/images/product1.jpg" alt="Awesome Product 1">
+      <h3 class="product-title text-blue-600">Awesome Product 1</h3>
+      <p class="product-subtitle text-gray-500">“Best Seller”</p>
+      <p class="product-description">Short description here.</p>
+    </a>
+  
+</div>
+
+
+<script>
+  const container = document.getElementById('banner-container');
+  const slides = container.children.length;
+  let index = 0;
+
+  const dotsContainer = document.getElementById('dots');
+
+  
+  for (let i = 0; i < slides; i++) {
+    const dot = document.createElement('button');
+    dot.className = "w-3 h-3 rounded-full bg-gray-400 hover:bg-white transition";
+    dot.addEventListener('click', () => {
+      index = i;
+      updateSlide();
+    });
+    dotsContainer.appendChild(dot);
+  }
+
+  const dots = dotsContainer.children;
+  dots[0].classList.add("bg-white");
+
+  function updateSlide() {
+    container.style.transform = `translateX(-${index * 100}%)`;
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].classList.remove("bg-white");
+      dots[i].classList.add("bg-gray-400");
+    }
+    dots[index].classList.remove("bg-gray-400");
+    dots[index].classList.add("bg-white");
+  }
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    index = (index + 1) % slides;
+    updateSlide();
+  });
+
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    index = (index - 1 + slides) % slides;
+    updateSlide();
+  });
+
+  
+  setInterval(() => {
+    index = (index + 1) % slides;
+    updateSlide();
+  }, 5000);
+</script>
+
+
+    </main>
+
+    
+    <footer class="mt-auto py-4 text-center text-gray-600">
+        <footer>
+    <div class="container">
+      <p>&copy; 2025 InkReaders. All rights reserved.</p>
+    </div>
+</footer>
+  
+    </footer>
+
+</body>
+</html>

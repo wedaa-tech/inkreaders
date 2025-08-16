@@ -1,0 +1,114 @@
+{{ define "main" }}
+
+<!-- Full-width Scrollable Banner -->
+<section class="relative w-full overflow-hidden">
+  <div id="banner-container" class="flex transition-transform duration-700 ease-in-out">
+
+    <!-- Slide 1 -->
+    <div class="min-w-full h-[500px] bg-cover bg-center flex flex-col items-center justify-center text-center p-8"
+         style="background-image: url('/images/banner1.jpg');">
+      <div class="bg-black bg-opacity-50 p-6 rounded-lg">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-white">Welcome to <span class="text-yellow-300">InkReaders</span></h1>
+        <p class="text-lg md:text-xl mb-6 max-w-2xl text-gray-200">Discover trending products and insightful blogs at one place.</p>
+        <a href="/posts/" class="px-6 py-3 bg-yellow-400 text-black rounded-lg font-semibold hover:bg-yellow-300 transition">
+          Explore Blogs
+        </a>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="min-w-full h-[500px] bg-cover bg-center flex flex-col items-center justify-center text-center p-8"
+         style="background-image: url('/images/banner2.jpg');">
+      <div class="bg-black bg-opacity-50 p-6 rounded-lg">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-white">Our App is Live 🚀</h1>
+        <p class="text-lg md:text-xl mb-6 max-w-2xl text-gray-200">Manage your reading, notes, and knowledge seamlessly.</p>
+        <a href="https://app.inkreaders.com/" class="px-6 py-3 bg-white text-green-700 rounded-lg font-semibold hover:bg-gray-200 transition">
+          Try Our App
+        </a>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="min-w-full h-[500px] bg-cover bg-center flex flex-col items-center justify-center text-center p-8"
+         style="background-image: url('/images/banner3.jpg');">
+      <div class="bg-black bg-opacity-50 p-6 rounded-lg">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-white">Learn with Docs 📚</h1>
+        <p class="text-lg md:text-xl mb-6 max-w-2xl text-gray-200">Step-by-step guides to help you explore InkReaders fully.</p>
+        <a href="/docs/" class="px-6 py-3 bg-white text-purple-700 rounded-lg font-semibold hover:bg-gray-200 transition">
+          View Docs
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Navigation Buttons -->
+  <button id="prevBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white px-3 py-2 rounded-full hover:bg-opacity-70">‹</button>
+  <button id="nextBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white px-3 py-2 rounded-full hover:bg-opacity-70">›</button>
+
+  <!-- Dots Navigation -->
+  <div id="dots" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3"></div>
+</section>
+
+<!-- Product Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+  {{ range .Site.Data.products }}
+    <a href="{{ .url }}" class="product-card">
+      <img src="{{ .img }}" alt="{{ .name }}">
+      <h3 class="product-title {{ .titleColor }}">{{ .name }}</h3>
+      <p class="product-subtitle {{ .subtitleColor }}">“{{ .subtitle }}”</p>
+      <p class="product-description">{{ .description }}</p>
+    </a>
+  {{ end }}
+</div>
+
+<!-- Banner Script -->
+<script>
+  const container = document.getElementById('banner-container');
+  const slides = container.children.length;
+  let index = 0;
+
+  const dotsContainer = document.getElementById('dots');
+
+  // Create dots dynamically
+  for (let i = 0; i < slides; i++) {
+    const dot = document.createElement('button');
+    dot.className = "w-3 h-3 rounded-full bg-gray-400 hover:bg-white transition";
+    dot.addEventListener('click', () => {
+      index = i;
+      updateSlide();
+    });
+    dotsContainer.appendChild(dot);
+  }
+
+  const dots = dotsContainer.children;
+  dots[0].classList.add("bg-white");
+
+  function updateSlide() {
+    container.style.transform = `translateX(-${index * 100}%)`;
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].classList.remove("bg-white");
+      dots[i].classList.add("bg-gray-400");
+    }
+    dots[index].classList.remove("bg-gray-400");
+    dots[index].classList.add("bg-white");
+  }
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    index = (index + 1) % slides;
+    updateSlide();
+  });
+
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    index = (index - 1 + slides) % slides;
+    updateSlide();
+  });
+
+  // Auto scroll every 5s
+  setInterval(() => {
+    index = (index + 1) % slides;
+    updateSlide();
+  }, 5000);
+</script>
+
+{{ end }}

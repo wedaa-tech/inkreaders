@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .product-card {
+    @apply block bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1;
+  }
+  .product-title {
+    @apply text-2xl font-bold mb-2;
+  }
+  .product-subtitle {
+    @apply text-sm font-semibold mb-3;
+  }
+  .product-description {
+    @apply text-gray-700;
+  }
+}
